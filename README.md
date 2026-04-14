@@ -1,6 +1,6 @@
 # Claude Researcher Skill
 
-![Claude Researcher Skill](masqotte.png)
+<img src="masqotte.png" width="50%" alt="Claude Researcher Skill">
 
 This skill provides a research structured workflow , collect multiple solution options from the web, organize findings into folders, optionally test each option, and produce a scored final decision.
 
