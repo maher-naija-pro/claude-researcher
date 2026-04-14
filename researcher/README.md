@@ -41,6 +41,63 @@ The skill follows this flow:
 6. Optionally test each solution and write `test_results_<solution>.md`.
 7. Create `decision/DECISION.md` with weighted scores and final recommendation.
 
+## Workflow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     RESEARCHER SKILL WORKFLOW                   │
+└─────────────────────────────────────────────────────────────────┘
+
+  Step 1 ─ Create Problem Directory
+           mkdir <problem_name>_problem/
+           → Confirm with user ✓
+
+  Step 2 ─ Search for Solutions in Parallel
+           Subagents (Sonnet) search across:
+           Community · Articles · Code · Academic · Reference · Video
+           Present list of solutions found.
+           → Confirm with user (may exclude solutions) ✓
+
+  Step 3 ─ Create One Directory per Solution
+           solution_<name>/
+             README.md
+             documentation/
+
+  Step 4 ─ Gather Documentation per Solution
+           Parallel subagents (Sonnet) — one per source category
+           Each produces documentation/<doc_topic>.md
+
+  Step 5 ─ Document Each Solution
+           Write solution README.md with:
+           Summary · Sources · Pros · Cons
+           → Ask: "Test each solution or compare docs only?" ✓
+                        │
+             ┌──────────┴──────────┐
+             │ Test                │ Skip
+             ▼                     ▼
+  Step 6 ─ Test Each Solution     │
+           Sequential subagents   │
+           (Sonnet, one at a time) │
+           Write test_results_     │
+           <solution>.md           │
+             └──────────┬──────────┘
+                        ▼
+  Step 7 ─ Decision Summary  (Opus)
+           decision/DECISION.md with:
+           Scoring table · Weighted aspects · Final recommendation
+           → Present and confirm with user ✓
+```
+
+| Step | Action | Model | Confirm? |
+|------|--------|-------|----------|
+| 1 | `mkdir <problem>_problem/` | — | Yes |
+| 2 | Parallel subagents — search (docs, GitHub, Reddit, SO, etc.) | Sonnet | Yes |
+| 3 | `mkdir solution_<name>/` + `documentation/` per solution | — | — |
+| 4 | Parallel subagents — gather docs into `documentation/<topic>.md` | Sonnet | — |
+| 5 | Write `README.md` with summary, sources, pros/cons | — | Yes |
+| 6 | Sequential subagents — test each solution, write `test_results_<name>.md` | Sonnet | — |
+| 7 | Create `decision/DECISION.md` with scoring table and final decision | Opus | Yes |
+
 ## Output Structure
 
 ```text
