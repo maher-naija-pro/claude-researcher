@@ -1,6 +1,6 @@
 # Claude Researcher Skill
 
-<img src="masqotte.png" width="50%" alt="Claude Researcher Skill">
+<p align="center"><img src="masqotte.png" width="50%" alt="Claude Researcher Skill"></p>
 
 This skill provides a research structured workflow , collect multiple solution options from the web, organize findings into folders, optionally test each option, and produce a scored final decision.
 
@@ -117,4 +117,8 @@ The skill follows this flow:
   decision/
     DECISION.md
 ```
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
