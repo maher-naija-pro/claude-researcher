@@ -75,8 +75,8 @@ The skill follows this flow:
              ┌──────────┴──────────┐
              │ Test                │ Skip
              ▼                     ▼
-  Step 6 ─ Test Each Solution     │
-           Sequential subagents   │
+  Step 6 ─ Test Each Solution      │
+           Sequential subagents    │
            (Sonnet, one at a time) │
            Write test_results_     │
            <solution>.md           │
