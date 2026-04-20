@@ -1,8 +1,20 @@
 # Claude Researcher Skill
 
-<p align="center"><img src="masqotte.png" width="50%" alt="Claude Researcher Skill"></p>
+<p align="center"><img src="masqotte.png" width="50%" alt="Claude Researcher"></p>
 
-This skill provides a research structured workflow , collect multiple solution options from the web, organize findings into folders, optionally test each option, and produce a scored final decision.
+<p align="center"><b>Give Claude a research question. Get a structured report with tested solutions and a scored decision.</b></p>
+
+<p align="center"><img src="assets/demo.gif" width="90%" alt="Demo"></p>
+
+<p align="center">
+  <a href="#install">Install in 30s</a> ·
+  <a href="examples/vector-db-rag/decision/DECISION.md">See example output</a> ·
+  ⭐ Star if useful
+</p>
+
+---
+
+This skill gives Claude a structured research workflow: search the web in parallel, organize findings into folders, optionally test each solution, and produce a weighted scoring decision.
 
 ## What This Skill Does
 
@@ -15,15 +27,13 @@ This skill provides a research structured workflow , collect multiple solution o
 
 ## Install
 
-Use one of the setups below depending on how you use skills.
+```bash
+mkdir -p ~/.claude/skills/researcher
+curl -o ~/.claude/skills/researcher/SKILL.md \
+  https://raw.githubusercontent.com/maher-naija-pro/claude-researcher/main/researcher/SKILL.md
+```
 
-#Install
-
-1. Create a global skills directory if needed (example):
-   - `~/.claude/skills/researcher/`
-2. Copy this skill file into that folder as:
-   - `~/.claude/skills/researcher/SKILL.md`
-3. Restart your agent/CLI session so the skill is reloaded.
+Then restart your Claude CLI session so the skill is reloaded.
 
 ## How To Use
 
@@ -118,7 +128,10 @@ The skill follows this flow:
     DECISION.md
 ```
 
+## Example Output
+
+See [`examples/vector-db-rag/`](examples/vector-db-rag/) for a complete run comparing vector database options for RAG, including per-solution docs, test results, and a final `DECISION.md` with weighted scoring.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
